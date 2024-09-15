@@ -7,3 +7,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "General Sans", sans-serif;
+}
+
+.gradient {
+  /* https://uigradients.com/#AquaMarine */
+  background: #1a2980;
+  background: -webkit-linear-gradient(to left, #1a2980, #26d0ce);
+  background: linear-gradient(to left, #1a2980, #26d0ce);
+}
+
+@layer utilities {
+  .content-placement {
+    @apply w-full max-w-[1200px] mx-auto;
+  }
+  .header {
+    @apply w-full h-20 bg-transparent fixed top-0 left-0 z-50 text-white hover:text-text-color;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+}
+
+.sticky {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  color: black;
+  background-color: white;
+}
