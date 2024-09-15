@@ -1,10 +1,13 @@
 import Header from "./sections/Header";
+import Hero from "./sections/Hero";
 
 const App = () => {
   return (
     <main>
       <Header />
-      <div className="h-[200vh] bg-black">Content</div>
+      <div className="img">hello</div>
+      <Hero />
+      <div className="h-[200vh] bg-white"></div>
       <a href="#home">gth</a>
     </main>
   );
