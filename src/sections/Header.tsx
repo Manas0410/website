@@ -41,12 +41,17 @@ const Header = () => {
   const closeMenu = useCallback(() => setIsOpen(false), []);
 
   return (
-    <header className={`header ${isSticky ? "sticky" : ""}`} id="home">
+    <header
+      className={`header ${isSticky ? "sticky" : ""} backdrop-blur-sm ${
+        isOpen ? "sticky" : ""
+      }`}
+      id="home"
+    >
       <div className="content-placement h-full">
         <div className="flex justify-between h-full items-center  mx-auto c-space">
           <a
             href="/"
-            className="text-text-color font-bold text-xl transition-colors"
+            className="text-text-color-1 font-bold text-4xl transition-colors"
           >
             SMxDev
           </a>
@@ -59,7 +64,7 @@ const Header = () => {
             <img
               src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
               alt="toggle"
-              className={`w-6 h-6 ${isSticky || isOpen ? "text-black" : ""}`}
+              className={`w-6 h-6 `}
             />
           </button>
 
@@ -72,7 +77,7 @@ const Header = () => {
 
       {/* Mobile sidebar */}
       <div className={`nav-sidebar ${isOpen ? "max-h-screen" : "max-h-0"}`}>
-        <nav className="p-5">
+        <nav className="p-5 bg-white">
           <NavItems onClick={closeMenu} />
         </nav>
       </div>
