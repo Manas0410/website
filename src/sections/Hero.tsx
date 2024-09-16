@@ -20,8 +20,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="particles h-[80vh] w-full">
-      <div className="content-placemen flex justify-center flex-col items-center">
+    <section className="particles h-[80vh] w-full ">
+      <div className="content-placement flex justify-center flex-col items-center">
         <h1 className="text-center my-10">
           <strong className="text-center text-text-color-1 sm:text-4xl lg:text-6xl text-2xl ">
             Want to have your own website ?
@@ -30,6 +30,13 @@ const Hero = () => {
         <div>
           <span className="auto-type mx-auto  my-10 font-semibold text-center text-text-color-2 sm:text-4xl lg:text-6xl text-2xl"></span>
         </div>
+        <p className="text-center my-10">
+          We offer comprehensive services, from crafting custom websites using
+          all the modern technologies to building e-commerce platforms, web
+          applications, and responsive designs. They manage front-end and
+          back-end development, provide maintenance, support, and integrate SEO
+          to ensure optimal performance and visibility online.
+        </p>
       </div>
     </section>
   );

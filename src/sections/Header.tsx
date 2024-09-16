@@ -45,7 +45,6 @@ const Header = () => {
       className={`header ${isSticky ? "sticky" : ""} backdrop-blur-sm ${
         isOpen ? "sticky" : ""
       }`}
-      id="home"
     >
       <div className="content-placement h-full">
         <div className="flex justify-between h-full items-center  mx-auto c-space">
