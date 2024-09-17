@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Typed from "typed.js";
+import SocialsIcon from "../components/SocialsIconBar";
 
 const Hero = () => {
   useEffect(() => {
@@ -30,7 +31,7 @@ const Hero = () => {
         <div>
           <span className="auto-type mx-auto  my-10 font-semibold text-center text-text-color-2 sm:text-4xl lg:text-6xl text-2xl"></span>
         </div>
-        <p className="text-center my-10">
+        <p className="text-center my-10 text-text-color-3">
           We offer comprehensive services, from crafting custom websites using
           all the modern technologies to building e-commerce platforms, web
           applications, and responsive designs. They manage front-end and
@@ -38,6 +39,7 @@ const Hero = () => {
           to ensure optimal performance and visibility online.
         </p>
       </div>
+      <SocialsIcon />
     </section>
   );
 };

@@ -6,6 +6,8 @@ export default {
       colors: {
         "text-color-1": "#021b79",
         "text-color-2": "#0575e6",
+        "text-color-3": "#999",
+        "text-color-4": "rgb(75, 80, 94)",
       },
     },
   },
