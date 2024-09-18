@@ -27,7 +27,7 @@ body {
 
 @layer utilities {
   .content-placement {
-    @apply w-full max-w-[1200px] mx-auto p-4;
+    @apply w-full max-w-[1200px] mx-auto px-4;
   }
   .header {
     @apply w-full h-20 bg-transparent fixed top-0 left-0 z-50 text-white hover:text-text-color-1;
@@ -163,4 +163,9 @@ body {
 
 .Btn:hover .svgContainer {
   background-color: rgba(156, 156, 156, 0.466);
+}
+
+/*  */
+.copy-container {
+  @apply cursor-pointer flex justify-center items-center gap-2;
 }
