@@ -9,6 +9,9 @@ export default {
         "text-color-3": "#999",
         "text-color-4": "rgb(75, 80, 94)",
       },
+      screens: {
+        "custom-lg": "800px", // Custom media query for min-width 800px
+      },
     },
   },
   plugins: [],

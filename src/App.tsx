@@ -1,3 +1,4 @@
+import Contact from "./sections/Contact";
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 
@@ -7,6 +8,7 @@ const App = () => {
       <Header />
       <div className="img" id="home"></div>
       <Hero />
+      <Contact />
       <div className="h-[200vh] bg-white"></div>
       <a href="#home">gth</a>
     </main>

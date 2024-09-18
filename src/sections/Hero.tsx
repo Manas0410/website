@@ -25,12 +25,12 @@ const Hero = () => {
     <section className="particles h-max w-full ">
       <div className="content-placement flex justify-center flex-col items-center gap-10 py-10">
         <h1 className="text-center ">
-          <strong className="text-center text-text-color-1 sm:text-4xl lg:text-6xl text-2xl ">
+          <strong className="text-center text-text-color-1 heading-fontsize ">
             Want to have your own website ?
           </strong>
         </h1>
         <div>
-          <span className="auto-type mx-auto  font-semibold text-center text-text-color-2 sm:text-4xl lg:text-6xl text-2xl"></span>
+          <span className="auto-type mx-auto  font-semibold text-center text-text-color-2 heading-fontsize"></span>
         </div>
         <p className="text-center  text-text-color-3">
           We offer comprehensive services, from crafting custom websites using
