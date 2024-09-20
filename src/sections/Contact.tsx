@@ -4,7 +4,7 @@ import SocialsIconBar from "../components/SocialsIconBar";
 
 const Contact = () => {
   return (
-    <section id="contact" className="content-placement my-24">
+    <section className="content-placement my-24">
       <h3 className="text-center text-text-color-4 heading-fontsize mb-10">
         Contact <span className="text-text-color-2">Us</span>
       </h3>
