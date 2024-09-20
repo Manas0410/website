@@ -16,7 +16,7 @@ const Contact = () => {
         We will get back to you soon.
       </p>
       <section className="mt-10 flex flex-col custom-lg:flex-row custom-lg:gap-4 gap-14">
-        <div className="w-full custom-lg:w-[30%] flex flex-col gap-4 justify-between items-center">
+        <div className="w-full max-h-[316px] custom-lg:w-[30%] flex flex-col gap-4 justify-between items-center">
           <img
             src="/assets/locationlogo.webp"
             alt="Address:"
