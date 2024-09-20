@@ -3,6 +3,7 @@ import Footer from "./sections/Footer";
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import Services from "./sections/Services";
+import Tbdel from "./sections/tbdel";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Services />
       <div id="contact" />
       <Contact />
+      <Tbdel />
       <Footer />
       <div className="h-[200vh] bg-white"></div>
       <a href="#home">gth</a>
