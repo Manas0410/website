@@ -100,6 +100,30 @@ export const animateRightToLeft = (sectionRef: HTMLDivElement | null) => {
   );
 };
 
+// animate number range
+
+export const animateNumberRange = (
+  start: number,
+  end: number,
+  triggerRef: HTMLDivElement
+) => {
+  return gsap.fromTo(
+    triggerRef,
+    {
+      innerHTML: start,
+    },
+    {
+      innerHTML: end,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: triggerRef,
+        start: "top 60%",
+        end: "top 30%",
+      },
+    }
+  );
+};
+
 // Create timeline and add animations
 export const createTimeline = (
   paragraphRef: HTMLParagraphElement,
