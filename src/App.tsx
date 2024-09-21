@@ -1,3 +1,4 @@
+import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import Header from "./sections/Header";
@@ -10,6 +11,8 @@ const App = () => {
       <Header />
       <div className="img" id="home"></div>
       <Hero />
+      <div id="about" />
+      <About />
       <div id="services" />
       <Services />
       <div id="contact" />

@@ -17,8 +17,8 @@ body {
 
 .gradient {
   background: #0575e6;
-  background: -webkit-linear-gradient(to right, #0575e6, #021b79);
-  background: linear-gradient(to right, #0575e6, #021b79);
+  background: -webkit-linear-gradient(to left, #0575e6, #021b79);
+  background: linear-gradient(to left, #0575e6, #021b79);
 }
 
 .particles {
@@ -190,4 +190,35 @@ body {
   -webkit-box-shadow: 1px 3px 21px 14px rgba(217, 214, 217, 0.82);
   -moz-box-shadow: 1px 3px 21px 14px rgba(217, 214, 217, 0.82);
   box-shadow: 1px 3px 21px 14px rgba(217, 214, 217, 0.82);
+}
+
+.skill {
+  filter: invert(94%) sepia(100%) saturate(24%) hue-rotate(77deg)
+    brightness(106%) contrast(107%);
+  opacity: 0.2;
+  width: 60px;
+  height: 60px;
+  margin: auto;
+}
+.gridposition {
+  grid-row: var(--r);
+  grid-column: var(--c);
+  column-span: 1;
+}
+
+.inf-carousel-animation {
+  overflow: hidden;
+  animation: infinity 15s linear infinite;
+  min-width: 2858px;
+  width: 200vw;
+  transition: transform 0.3s ease;
+}
+
+@keyframes infinity {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
