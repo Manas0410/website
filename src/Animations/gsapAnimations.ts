@@ -35,22 +35,66 @@ export const animateSection = (sectionRef: HTMLDivElement) => {
   );
 };
 
-export const animateHeading = (headingRef: HTMLHeadingElement | null) => {
+export const animateHeading = (
+  headingRef: HTMLHeadingElement | HTMLDivElement | null,
+  sectionRef: HTMLDivElement | null
+) => {
   return gsap.fromTo(
     headingRef,
     {
       opacity: 0,
-      y: 20,
     },
     {
       opacity: 1,
-      y: 0,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: headingRef,
-        start: "top 40%",
-        end: "bottom 40%",
-        scrub: true,
+        trigger: sectionRef,
+        start: "top 60%",
+        end: "top 30%",
+      },
+    }
+  );
+};
+
+// left to right
+
+export const animateLeftToRight = (sectionRef: HTMLDivElement | null) => {
+  return gsap.fromTo(
+    sectionRef,
+    {
+      opacity: 0,
+      x: -100,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: sectionRef,
+        start: "top 60%",
+        end: "top 30%",
+      },
+    }
+  );
+};
+
+// right to left
+
+export const animateRightToLeft = (sectionRef: HTMLDivElement | null) => {
+  return gsap.fromTo(
+    sectionRef,
+    {
+      opacity: 0,
+      x: 100,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: sectionRef,
+        start: "top 60%",
+        end: "top 30%",
       },
     }
   );

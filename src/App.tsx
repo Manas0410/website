@@ -18,8 +18,6 @@ const App = () => {
       <div id="contact" />
       <Contact />
       <Footer />
-      <div className="h-[200vh] bg-white"></div>
-      <a href="#home">gth</a>
     </main>
   );
 };

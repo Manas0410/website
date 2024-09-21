@@ -2,21 +2,31 @@ import { useEffect, useRef } from "react";
 import ContactForm from "../components/ContactForm";
 import CopyElement from "../components/CopyElement";
 import SocialsIconBar from "../components/SocialsIconBar";
-import { animateHeading } from "../Animations/gsapAnimations";
-import gsap from "gsap";
+import {
+  animateHeading,
+  animateLeftToRight,
+  animateRightToLeft,
+} from "../Animations/gsapAnimations";
 
 const Contact = () => {
   const headingRef1 = useRef<null | HTMLHeadingElement>(null);
   const headingRef2 = useRef<null | HTMLHeadingElement>(null);
+  const sectionRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline();
-    tl.add(animateHeading(headingRef1.current));
-    tl.add(animateHeading(headingRef2.current));
+    animateHeading(headingRef1.current, sectionRef.current);
+    animateHeading(headingRef2.current, sectionRef.current);
   }, []);
 
+  const leftRef = useRef<null | HTMLDivElement>(null);
+  const rightRef = useRef<null | HTMLDivElement>(null);
+
+  useEffect(() => {
+    animateLeftToRight(leftRef.current);
+    animateRightToLeft(rightRef.current);
+  }, []);
   return (
-    <section className="content-placement mt-24 ">
+    <section className="content-placement mt-24 " ref={sectionRef}>
       <h3
         className="text-center text-text-color-4 heading-fontsize mb-10"
         ref={headingRef1}
@@ -29,7 +39,10 @@ const Contact = () => {
         We will get back to you soon.
       </h4>
       <section className="mt-10 flex flex-col custom-lg:flex-row custom-lg:gap-4 gap-14">
-        <div className="w-full max-h-[316px] custom-lg:w-[30%] flex flex-col gap-4 justify-between items-center">
+        <div
+          ref={leftRef}
+          className="w-full max-h-[316px] custom-lg:w-[30%] flex flex-col gap-4 justify-between items-center"
+        >
           <img
             src="/assets/locationlogo.webp"
             alt="Address:"
@@ -61,7 +74,7 @@ const Contact = () => {
           </div>
           <SocialsIconBar />
         </div>
-        <ContactForm />
+        <ContactForm reference={rightRef} />
       </section>
     </section>
   );

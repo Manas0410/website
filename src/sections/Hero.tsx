@@ -37,8 +37,8 @@ const Hero = () => {
           y: 0,
           stagger: 0.1, // Delay between each word animation
           ease: "power2.out",
-          duration: 0.6,
-          delay: 1,
+          duration: 0.2,
+          delay: 0.5,
         }
       );
     }

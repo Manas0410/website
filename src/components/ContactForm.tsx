@@ -7,7 +7,7 @@ type FormData = {
   message: string;
 };
 
-const ContactForm = () => {
+const ContactForm = ({ reference }: { reference: any }) => {
   const [data, setData] = useState<FormData>({
     name: "",
     Number: "",
@@ -22,7 +22,11 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full custom-lg:w-[70%]">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full custom-lg:w-[70%]"
+      ref={reference}
+    >
       <fieldset className="w-full grid grid-cols-1 custom-lg:grid-cols-2 gap-5">
         <input
           required

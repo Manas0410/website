@@ -1,4 +1,5 @@
 import React from "react";
+import TechOverlay from "./TechOverlay";
 
 const Languages = () => {
   return (
@@ -87,11 +88,12 @@ const Languages = () => {
 
 const LanguageCarrousel = () => {
   return (
-    <section className="gradient overflow-hidden w-screen">
+    <section className="gradient relative overflow-hidden w-screen">
       <div className="flex inf-carousel-animation h-[500px] ">
         <Languages />
         <Languages />
       </div>
+      <TechOverlay />
     </section>
   );
 };

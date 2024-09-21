@@ -222,3 +222,10 @@ body {
     transform: translateX(-50%);
   }
 }
+
+.tech-overlay {
+  border-radius: 134px 0 0px 134px;
+  border-color: rgb(79, 164, 249);
+  border-right: none;
+  background: linear-gradient(to left, #0575e6, #0427a8);
+}
