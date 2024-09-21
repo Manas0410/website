@@ -1,20 +1,33 @@
+import { useEffect, useRef } from "react";
 import ContactForm from "../components/ContactForm";
 import CopyElement from "../components/CopyElement";
 import SocialsIconBar from "../components/SocialsIconBar";
+import { animateHeading } from "../Animations/gsapAnimations";
+import gsap from "gsap";
 
 const Contact = () => {
+  const headingRef1 = useRef<null | HTMLHeadingElement>(null);
+  const headingRef2 = useRef<null | HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+    tl.add(animateHeading(headingRef1.current));
+    tl.add(animateHeading(headingRef2.current));
+  }, []);
+
   return (
-    <section className="content-placement my-24">
-      <h3 className="text-center text-text-color-4 heading-fontsize mb-10">
+    <section className="content-placement mt-24 ">
+      <h3
+        className="text-center text-text-color-4 heading-fontsize mb-10"
+        ref={headingRef1}
+      >
         Contact <span className="text-text-color-2">Us</span>
       </h3>
-      <p className="text-center text-text-color-3">
+      <h4 className="text-center text-text-color-3" ref={headingRef2}>
         If you have some assignment and want to contact us or ,You can fill the
-        below form with your details.
-      </p>
-      <p className="text-center text-text-color-3">
+        below form with your details. <br />
         We will get back to you soon.
-      </p>
+      </h4>
       <section className="mt-10 flex flex-col custom-lg:flex-row custom-lg:gap-4 gap-14">
         <div className="w-full max-h-[316px] custom-lg:w-[30%] flex flex-col gap-4 justify-between items-center">
           <img

@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import SocialsIcon from "../components/SocialsIconBar";
 import CopyElement from "../components/CopyElement";
+import { homeBannerText } from "../constants";
+import gsap from "gsap";
 
 const Hero = () => {
   useEffect(() => {
@@ -21,8 +23,42 @@ const Hero = () => {
     };
   }, []);
 
+  const paragraphRef = useRef<HTMLParagraphElement | null>(null);
+  const sectionRef = useRef<HTMLParagraphElement | null>(null);
+
+  useEffect(() => {
+    if (paragraphRef.current) {
+      const words = paragraphRef.current.querySelectorAll("span");
+      gsap.fromTo(
+        words,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1, // Delay between each word animation
+          ease: "power2.out",
+          duration: 0.6,
+          delay: 1,
+        }
+      );
+    }
+    if (sectionRef.current) {
+      gsap.fromTo(
+        sectionRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1, // Delay between each word animation
+          ease: "power2.out",
+          duration: 2,
+        }
+      );
+    }
+  }, []);
+
   return (
-    <section className="particles h-max w-full ">
+    <section className="particles h-max w-full " ref={sectionRef}>
       <div className="content-placement flex justify-center flex-col items-center gap-10 py-10">
         <h1 className="text-center ">
           <strong className="text-center text-text-color-1 heading-fontsize ">
@@ -32,12 +68,12 @@ const Hero = () => {
         <div>
           <span className="auto-type mx-auto  font-semibold text-center text-text-color-2 heading-fontsize"></span>
         </div>
-        <p className="text-center  text-text-color-3">
-          We offer comprehensive services, from crafting custom websites using
-          all the modern technologies to building e-commerce platforms, web
-          applications, and responsive designs. They manage front-end and
-          back-end development, provide maintenance, support, and integrate SEO
-          to ensure optimal performance and visibility online.
+        <p className="text-center  text-text-color-3" ref={paragraphRef}>
+          {homeBannerText.split(" ").map((word, index) => (
+            <span key={index} style={{ display: "inline-block", opacity: 0 }}>
+              {word}&nbsp;
+            </span>
+          ))}
         </p>
         <div className="flex sm:gap-8 gap-2 flex-wrap items-center justify-center">
           <div className="flex gap-4 ">

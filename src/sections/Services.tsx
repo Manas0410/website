@@ -1,10 +1,7 @@
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
-import { services } from "../constants";
+import { services, servicesDescription } from "../constants";
 import ServiceBanner from "../components/ServiceBanner";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
   useEffect(() => {
@@ -23,10 +20,13 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="content-placement my-24">
-      <h3 className="text-center text-text-color-4 heading-fontsize mb-20">
+    <section className="content-placement mt-24">
+      <h3 className="text-center text-text-color-4 heading-fontsize mb-10">
         Our <span className="text-text-color-2">Services</span>
       </h3>
+      <h4 className="text-center text-text-color-3 mb-20">
+        {servicesDescription}
+      </h4>
       <div className="flex gap-10 flex-col relative ">
         {services.map((service, i) => (
           <div
