@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { services, servicesDescription } from "../constants";
 import ServiceBanner from "../components/ServiceBanner";
 import { animateHeading } from "../Animations/gsapAnimations";
+import ServicesHeading from "../components/ServicesHeading";
 
 const Services = () => {
   const headingRef1 = useRef<null | HTMLHeadingElement>(null);
@@ -43,13 +44,14 @@ const Services = () => {
         {servicesDescription}
       </h4>
       <div className="flex gap-10 flex-col relative" ref={sectionRef2}>
+        <ServicesHeading />
         {services.map((service, i) => (
           <div
             key={service.heading}
-            className={`${i === 4 ? "" : "servicecard"} top-[15vh] shadow-none`}
+            className={`servicecard top-[30vh] shadow-none`}
             style={{ position: "sticky" }}
           >
-            <ServiceBanner {...service} />
+            <ServiceBanner {...service} id={service.href} />
           </div>
         ))}
       </div>

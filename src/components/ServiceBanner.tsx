@@ -2,15 +2,20 @@ type ServiceBannerProps = {
   heading: string;
   description: string;
   imgSrc: string;
+  id: string;
 };
 
 const ServiceBanner = ({
   heading,
   description,
   imgSrc,
+  id,
 }: ServiceBannerProps) => {
   return (
-    <section className="relative w-full h-[600px] servicebanner-shadow bg-gray-100 p-10 rounded-3xl overflow-hidden">
+    <section
+      id={id}
+      className="relative w-full h-[600px] servicebanner-shadow bg-gray-100 p-10 rounded-3xl overflow-hidden"
+    >
       <main className="flex flex-col gap-10 z-10 relative">
         <h4 className="text-text-color-1 sm:text-5xl font-semibold">
           {heading}
