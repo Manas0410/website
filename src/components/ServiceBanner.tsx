@@ -18,13 +18,16 @@ const ServiceBanner = ({
         <p className="text-text-color-3 sm:text-sm text-[12.5px]">
           {description}
         </p>
-        <button className="bg-white p-3 flex gap-3 items-center w-max rounded-lg text-text-color-2 shadow font-semibold">
+        <a
+          href="#contact"
+          className="bg-white p-3 flex gap-3 items-center w-max rounded-lg text-text-color-2 shadow font-semibold"
+        >
           Contact for work
           <span className="relative flex h-3 w-3">
             <span className="btn-ping" />
             <span className="btn-ping_dot" />
           </span>
-        </button>
+        </a>
       </main>
       <aside className="absolute bottom-0 right-0 custom-lg:w-max w-[480px] max-sm:right-[-40px]">
         <img src={imgSrc} alt="services" />
