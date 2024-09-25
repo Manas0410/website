@@ -7,7 +7,7 @@ const Footer = () => {
         <p>Privacy Policy</p>
       </div> */}
 
-      <p className="text-text-color-3">© 2024 SMxDev. All rights reserved.</p>
+      <p className="text-text-color-3">© 2024 MSxDev. All rights reserved.</p>
     </footer>
   );
 };

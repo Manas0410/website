@@ -52,7 +52,7 @@ const Header = () => {
             href="/"
             className="text-text-color-1 font-bold text-4xl transition-colors"
           >
-            SMxDev
+            MSxDev
           </a>
 
           <button
