@@ -49,7 +49,7 @@ const ContactForm = ({ reference }: { reference: any }) => {
           }
           return response.json();
         })
-        .then((data) => {
+        .then(() => {
           showAlert({
             text: "Thank you for your message 😃",
             type: "success",
