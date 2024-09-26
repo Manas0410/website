@@ -11,7 +11,7 @@ const ServiceBanner = ({
 }: ServiceBannerProps) => {
   return (
     <section className="relative w-full h-[600px] servicebanner-shadow bg-gray-100 p-10 rounded-3xl overflow-hidden">
-      <main className="flex flex-col gap-10 z-10 relative">
+      <main className="flex flex-col sm:gap-10 gap-2 z-10 relative max-w-[500px]">
         <h4 className="text-text-color-1 sm:text-5xl font-semibold">
           {heading}
         </h4>
@@ -29,7 +29,7 @@ const ServiceBanner = ({
           </span>
         </a>
       </main>
-      <aside className="absolute bottom-0 right-0 custom-lg:w-max w-[480px] max-sm:right-[-40px]">
+      <aside className="absolute bottom-8 right-8 service-img-size">
         <img src={imgSrc} alt="services" />
       </aside>
     </section>

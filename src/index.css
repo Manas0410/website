@@ -238,3 +238,7 @@ body {
     padding: 0 30px;
   }
 }
+
+.service-img-size {
+  width: clamp(15.625rem, 5.3906rem + 32.75vw, 32rem);
+}
