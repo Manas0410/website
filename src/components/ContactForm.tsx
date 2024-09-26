@@ -1,4 +1,6 @@
 import { useState, FormEvent } from "react";
+import useAlert from "../Hooks/useAlert";
+import Alert from "./Alert";
 
 type FormData = {
   name: string;
@@ -14,11 +16,67 @@ const ContactForm = ({ reference }: { reference: any }) => {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const { alert, showAlert, hideAlert } = useAlert();
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(data);
-    setData({ name: "", Number: "", email: "", message: "" });
+    setLoading(true);
+
+    try {
+      setLoading(false);
+      const mailData = {
+        tomail: "manasshrivastava0410@gmail.com",
+        bcc: "sanskratiagrawal306@gmail.com, msxdev01@gmail.com",
+        subject: "Contact info from MSxDEv",
+        message: "Below is the information of person that wanted to contact us",
+        information: {
+          ...data,
+        },
+      };
+
+      await fetch("https://emailservice-indol.vercel.app/mail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(mailData),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data) => {
+          showAlert({
+            text: "Thank you for your message 😃",
+            type: "success",
+          });
+
+          setTimeout(() => {
+            hideAlert();
+            setData({
+              name: "",
+              email: "",
+              message: "",
+              Number: "",
+            });
+          }, 3000);
+        });
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+
+      showAlert({
+        text: "Not received ur message , Please directly mail us !",
+        type: "danger",
+      });
+      setTimeout(() => {
+        hideAlert();
+      }, 3000);
+    }
   };
 
   return (
@@ -27,6 +85,7 @@ const ContactForm = ({ reference }: { reference: any }) => {
       className="w-full custom-lg:w-[70%]"
       ref={reference}
     >
+      {alert.show && <Alert {...alert} />}
       <fieldset className="w-full grid grid-cols-1 custom-lg:grid-cols-2 gap-5">
         <input
           required
@@ -70,8 +129,9 @@ const ContactForm = ({ reference }: { reference: any }) => {
         <button
           type="submit"
           className="submit-btn custom-lg:col-span-2 col-span-1"
+          disabled={loading}
         >
-          Contact Now !
+          {loading ? "Sending..." : "Send Message"}
         </button>
       </fieldset>
     </form>
