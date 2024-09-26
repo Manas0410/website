@@ -76,6 +76,8 @@ const ContactForm = ({ reference }: { reference: any }) => {
       setTimeout(() => {
         hideAlert();
       }, 3000);
+    } finally {
+      setLoading(false);
     }
   };
 
