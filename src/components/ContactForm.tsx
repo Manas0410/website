@@ -25,7 +25,7 @@ const ContactForm = ({ reference }: { reference: any }) => {
     setLoading(true);
 
     try {
-      setLoading(false);
+      setLoading(true);
       const mailData = {
         tomail: "manasshrivastava0410@gmail.com",
         bcc: "sanskratiagrawal306@gmail.com, msxdev01@gmail.com",
@@ -36,7 +36,7 @@ const ContactForm = ({ reference }: { reference: any }) => {
         },
       };
 
-      await fetch("https://emailservice-indol.vercel.app/mail", {
+      await fetch("https://my-emailservice.vercel.app/mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,10 +44,10 @@ const ContactForm = ({ reference }: { reference: any }) => {
         body: JSON.stringify(mailData),
       })
         .then((response) => {
+          console.log(response);
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
-          return response.json();
         })
         .then(() => {
           showAlert({
